@@ -108,8 +108,8 @@ export default function Home() {
                 </Link>
                 <div className="pcard__art" aria-hidden="true">
                   <Network className="pcard__net" />
-                  <div className="pcard__seed">
-                    <img src="/images/process-experiment.png" alt="" />
+                  <div className="pcard__seed pcard__seed--xl">
+                    <img src="/images/crop-leaves.jpg" alt="" />
                   </div>
                 </div>
               </article>
@@ -185,7 +185,7 @@ export default function Home() {
                 <span className="process__n">{step.n}</span>
                 <div className={`process__icon process__icon--${step.visual}`}>
                   {step.visual === 'leaf' && <img src="/images/leaf-dew.jpg" alt="" />}
-                  {step.visual === 'network' && <Network />}
+                  {step.visual === 'network' && <img src="/images/leaf-official.jpg" alt="" />}
                   {step.visual === 'seed' && <img src="/images/process-experiment.png" alt="" />}
                   {step.visual === 'cycle' && <CycleIcon />}
                 </div>
