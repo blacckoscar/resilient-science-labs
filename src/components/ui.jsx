@@ -74,7 +74,7 @@ export function Network({ className = '', tone = 'dark' }) {
     [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0],
     [0, 8], [1, 8], [2, 8], [4, 8], [5, 8], [6, 8],
   ]
-  const fill = { lime: '#A8D85F', dark: tone === 'light' ? '#E8F0E4' : '#123D32', teal: '#547E8D' }
+  const fill = { lime: '#A8D85F', dark: tone === 'light' ? '#E8F0E4' : '#082219', teal: '#547E8D' }
   const stroke = tone === 'light' ? 'rgba(255,255,255,0.45)' : 'rgba(18,61,50,0.35)'
   return (
     <svg className={`network ${className}`} viewBox="0 0 260 180" aria-hidden="true">
@@ -98,7 +98,7 @@ export function Orbitals({ className = '', light = false }) {
       <circle cx="118" cy="210" r="4" fill="#A8D85F" />
       <circle cx="590" cy="118" r="4" fill="#A8D85F" />
       <circle cx="640" cy="300" r="4.5" fill="#547E8D" />
-      <circle cx="520" cy="470" r="3.5" fill="#123D32" />
+      <circle cx="520" cy="470" r="3.5" fill="#082219" />
       <circle cx="210" cy="460" r="4" fill="#A8D85F" />
     </svg>
   )
@@ -106,9 +106,31 @@ export function Orbitals({ className = '', light = false }) {
 
 export function PlayIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <circle cx="9" cy="9" r="8.2" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M7.4 5.8 12.2 9 7.4 12.2V5.8Z" fill="currentColor" />
+    <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+      <circle cx="21" cy="21" r="21" fill="#ffffff" />
+      <path d="M17.2 14.2v13.6L29 21 17.2 14.2Z" fill="#082219" />
     </svg>
+  )
+}
+
+export function VideoModal({ open, onClose }) {
+  if (!open) return null
+  return (
+    <div className="modal" role="dialog" aria-modal="true" aria-label="Introduction">
+      <div className="modal__card">
+        <button className="modal__close" onClick={onClose} aria-label="Close">
+          ×
+        </button>
+        <Eyebrow>A short introduction</Eyebrow>
+        <h2>The work, in one loop.</h2>
+        <p>
+          Evidence. Prediction. Experiment. Learning. Resilient Science Labs exists to keep that cycle moving — so
+          biological intelligence can keep pace with a changing world.
+        </p>
+        <Button to="/science" variant="forest" onClick={onClose}>
+          Read the science <Arrow />
+        </Button>
+      </div>
+    </div>
   )
 }

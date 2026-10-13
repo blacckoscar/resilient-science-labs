@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Arrow, Button, Eyebrow, PlayIcon } from '../components/ui.jsx'
+import { Arrow, Button, Eyebrow, PlayIcon, VideoModal } from '../components/ui.jsx'
 
 export default function About() {
   const [open, setOpen] = useState(false)
@@ -37,24 +37,7 @@ export default function About() {
           </div>
           <p className="side-caption">Science for a more resilient tomorrow.</p>
         </div>
-        {open && (
-          <div className="modal" role="dialog" aria-modal="true" aria-label="Introduction">
-            <div className="modal__card">
-              <button className="modal__close" onClick={() => setOpen(false)} aria-label="Close">
-                ×
-              </button>
-              <Eyebrow>A short introduction</Eyebrow>
-              <h2>The work, in one loop.</h2>
-              <p>
-                Evidence. Prediction. Experiment. Learning. Resilient Science Labs exists to keep that cycle moving
-                — so biological intelligence can keep pace with a changing world.
-              </p>
-              <Button to="/science" variant="forest">
-                Read the science <Arrow />
-              </Button>
-            </div>
-          </div>
-        )}
+        <VideoModal open={open} onClose={() => setOpen(false)} />
       </section>
 
       <section className="section">

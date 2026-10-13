@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Arrow, Button, CellField, Eyebrow, Network, Orbitals } from '../components/ui.jsx'
+import { Arrow, Button, CellField, Eyebrow, Network, Orbitals, PlayIcon, VideoModal } from '../components/ui.jsx'
 import { CycleIcon, impactIcons } from '../components/Icons.jsx'
 import { Mark } from '../components/Logo.jsx'
 import { impactAreas, insights, processSteps } from '../content.js'
 
 export default function Home() {
+  const [videoOpen, setVideoOpen] = useState(false)
+
   return (
     <>
       <section className="hero">
@@ -17,15 +20,17 @@ export default function Home() {
               for biological adaptation.
             </h1>
             <p className="hero__lead">
-              Connecting biological insight, computational thinking and experimental learning.
+              From data to discovery to real-world impact.
+              <br />
+              We rebuild the science infrastructure for a more resilient tomorrow.
             </p>
             <div className="hero__actions">
               <Button to="/platforms">
-                Explore our platforms <Arrow />
+                Explore our platform <Arrow />
               </Button>
-              <Button to="/science" variant="ghost">
-                Our approach
-              </Button>
+              <button className="btn btn--play" onClick={() => setVideoOpen(true)}>
+                <PlayIcon /> Watch video
+              </button>
             </div>
             <ul className="hero__axioms">
               <li>
@@ -57,9 +62,10 @@ export default function Home() {
             <div className="orb orb--net">
               <Network tone="light" />
             </div>
-            <p className="side-caption">Biological systems. Brighter possibilities.</p>
+            <p className="side-caption">Science for a more resilient tomorrow.</p>
           </div>
         </div>
+        <VideoModal open={videoOpen} onClose={() => setVideoOpen(false)} />
       </section>
 
       <section className="approach">

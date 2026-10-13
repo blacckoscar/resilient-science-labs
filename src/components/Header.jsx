@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import Logo from './Logo.jsx'
 
 const links = [
   { to: '/science', label: 'Science' },
   { to: '/platforms', label: 'Platforms' },
   { to: '/impact', label: 'Impact' },
-  { to: '/insights', label: 'Insights' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/about', label: 'About' },
 ]
 
 export default function Header() {
@@ -28,16 +27,24 @@ export default function Header() {
               {item.label}
             </NavLink>
           ))}
+          <Link to="/contact" className="btn btn--touch">
+            Get in touch
+          </Link>
         </nav>
-        <button
-          className={`menu-btn ${open ? 'is-open' : ''}`}
-          aria-expanded={open}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-        </button>
+        <div className="header-actions">
+          <Link to="/contact" className="btn btn--touch header-cta">
+            Get in touch
+          </Link>
+          <button
+            className={`menu-btn ${open ? 'is-open' : ''}`}
+            aria-expanded={open}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
     </header>
   )
