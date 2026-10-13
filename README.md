@@ -4,6 +4,9 @@ A React marketing site for Resilient Science Labs — engineering intelligence f
 
 Built from the official brand system (deep forest `#123D32`, adaptive lime `#A8D85F`, mineral blue `#547E8D`) and the approved homepage, platform, report and hero designs.
 
+- Live: https://resilient-science-labs.vercel.app
+- GitHub: https://github.com/blacckoscar/resilient-science-labs
+
 ## Local
 
 ```bash
